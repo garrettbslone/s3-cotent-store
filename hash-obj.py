@@ -73,7 +73,7 @@ def store_object(connection, bucket_name, blob, hash_func):
     try:
         connection.put_object(Bucket=bucket_name, Key=blobref, Body=blob)
 
-    except ClintError as e:
+    except ClientError as e:
         print(e, type(e))
 
     return blobref
